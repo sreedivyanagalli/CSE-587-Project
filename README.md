@@ -1,5 +1,5 @@
 # CSE-587-Project
-
+# Combined new dataset with existing(previously used) dataset for better complexity
 a. Questions Listed for Each Team Member
     1. Janani chalapati (50592361, jananich@buffalo.edu): Which health factors are the most important for predicting diabetes risk?
     2. Srinischala Alugubelli (50595806, srinisch@buffalo.edu): How do BMI, glucose levels, and blood pressure affect the accuracy of diabetes risk predictions?

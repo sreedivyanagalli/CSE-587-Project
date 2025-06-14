@@ -1,39 +1,71 @@
-# CSE-587-Project
-# Combined new dataset with existing(previously used) dataset for better complexity
-a. Questions Listed for Each Team Member
-    1. Janani chalapati (50592361, jananich@buffalo.edu): Which health factors are the most important for predicting diabetes risk?
-    2. Srinischala Alugubelli (50595806, srinisch@buffalo.edu): How do BMI, glucose levels, and blood pressure affect the accuracy of diabetes risk predictions?
-    3. Sree Divya Nagalli(50595821, sreedivy@buffalo.edu): Can machine learning do a better job than traditional methods in spotting diabetes risk?
-    4. Praveen Kumar Byrapuneni (50593961, pbyrapun@buffalo.edu): How do lifestyle habits, like diet and exercise, influence these predictions?
+-Diabetes Prediction Using Machine Learning-
 
-b. Experiment Code Associated with Each Question
-    Health Factors:
-    File: app.py, class HealthFactorsPredictor.
-    Line: Functions using RandomForestClassifier.
-    Demographic Factors:
-    File: app.py, class DemographicPredictor.
-    Line: Functions using AdaBoostClassifier.
-    Machine Learning vs Traditional Methods:
-    File: app.py, class SocioeconomicPredictor.
-    Line: Functions using ExtraTreesClassifier.
-    Lifestyle Habits:
-    File: app.py, class LifestylePredictor.
-    Line: Functions using LogisticRegression.
+-Project Objective-
+This project builds a machine learning model to predict whether a person is likely to be diabetic based on health-related features. It uses the Pima Indians Diabetes Dataset and demonstrates the end-to-end ML pipeline including training, evaluation, and web deployment using Flask.
 
-c. Analysis Location for Each Question
-The analysis for each hypothesis question is present in: app.py for implementation.
-The associated metrics and results are discussed in the report in Sections VII (Evaluation Metrics) and VIII (Results and Discussions).
+-Tech Stack-
+- Python
+- scikit-learn (Logistic Regression, SVM, etc.)
+- Pandas, NumPy (Data manipulation)
+- Matplotlib / Seaborn (Data visualization)
+- Flask (for deploying web interface)
+- Jupyter Notebook
 
-d. Folder Structure
-app/: Contains all the application code (app.py with imported classifiers and logic for prediction).
-exp/: Contains Jupyter notebooks (.ipynb) for running experiments and generating results.
-results/: Contains experiment outputs like accuracy scores, ROC-AUC, and confusion matrices.
-report/: Documentation including insights, evaluation, and findings (report.pdf).
+-Dataset – Pima Indians Diabetes Dataset-
+- Source: UCI Machine Learning Repository
+- Records: 768 samples
+- Features:
+  - Pregnancies
+  - Glucose
+  - Blood Pressure
+  - Skin Thickness
+  - Insulin
+  - BMI
+  - Diabetes Pedigree Function
+  - Age
+- Target: `1` → Diabetic, `0` → Non-diabetic
 
-e. Instructions to Build the App from Source Code
-Pre-requisites: Python 3.8 or higher.
-Libraries: Install dependencies using pip install -r requirements.txt.
-Setting Up the Environment: Clone the repository or unzip the project files. Navigate to the project directory.
-Running the Application: Run the app.py file using the command: python app.py(This will start the application, allowing users to input data and receive predictions.)
-Testing:
-To test the application, navigate to exp/ and run the .ipynb files for individual model evaluations.
+-ML Pipeline-
+1. Data Cleaning & Exploration
+2. Feature Scaling
+3. Model Building (Logistic Regression, SVM)
+4. Model Evaluation
+5. Web Deployment using Flask
+
+-Web App-
+
+A lightweight Flask app allows users to input values for 8 health metrics and receive a real-time diabetes prediction.
+
+```bash
+# Run the Flask app
+python app.py
+```
+
+- Input: Health metrics (via form)
+- Output: "You are likely diabetic" / "You are not diabetic"
+
+---
+
+-Results-
+
+| Model                  | Accuracy |
+|------------------------|----------|
+| Logistic Regression    | ~77%     |
+| Support Vector Machine | ~78%     |
+
+> Model is saved and reused via `pickle` for fast deployment.
+
+-How to Use-
+1. Clone this repo:
+   ```bash
+   git clone https://github.com/sreedivyanagalli/Diabetes-Prediction.git
+   cd Diabetes-Prediction
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Run the Flask app:
+   ```bash
+   python app.py
+   ```

@@ -69,3 +69,6 @@ python app.py
    ```bash
    python app.py
    ```
+   
+-Skills-
+`Machine Learning`, `Logistic Regression`, `SVM`, `Flask`, `Model Deployment`, `Python`, `Healthcare Prediction`, `scikit-learn`, `Web App`
